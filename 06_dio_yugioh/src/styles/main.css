@@ -1,0 +1,163 @@
+body {
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button, a, img:hover, a:hover {
+    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
+.bg-video {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-video .video {
+    height: 100%;
+    width: auto; 
+}
+
+.bg-video::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+
+.container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column; 
+    height: 100vh; 
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row; 
+    }
+}
+
+.container__left, .container__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container__left {
+    width: 100%; 
+    min-width: unset;
+}
+
+.container__right {
+    width: 100%; 
+}
+
+@media screen and (min-width: 768px) {
+    .container__left {
+        width: 35%;
+        min-width: 300px;
+    }
+    .container__right {
+        width: 65%;
+    }
+}
+
+.score_box, .card_details {
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.frame {
+    border: 3px solid #000;
+    border-radius: 5px;
+}
+
+.card_details {
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+}
+
+#card-name {
+    font-size: 0.8rem;
+}
+
+#card-type {
+    font-size: 1rem;
+}
+
+#card-image {
+    width: 150px;
+}
+
+.card-box__container, .card-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .card-box__container {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .card-box {
+        flex-direction: row;
+        height: 9rem;
+        width: 100%;
+    }
+}
+
+.card-infield {
+    height: auto;
+    width: 8rem;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+.card {
+    transition: transform 0.2s;
+    margin: 0 10px;
+}
+
+.card:hover {
+    transform: scale(1.2);
+}
+
+.card-versus__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.1rem;
+    height: 300px;
+}
+
+.versus-top, .versus-botton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.versus-botton {
+    margin-top: 1rem;
+}
+
+#next-duel {
+    display: none;
+}
